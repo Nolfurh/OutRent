@@ -15,10 +15,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from src.frameworks.django_outrent.main_app import views
+from django.urls import path, include
+from main_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.show_main_page),
+    path('', include('main_app.urls')),
+    path('draft-app', include('draft_app.urls')),
+    #path('ratings/', include('star_ratings.urls', namespace='ratings')),
 ]

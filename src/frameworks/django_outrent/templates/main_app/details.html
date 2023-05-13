@@ -1,0 +1,9 @@
+{% extends "main_app/base.html" %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block content %}
+  <h1>{{ dwells.title }}</h1>
+  <p class="date">
+    Виставлено: {{ dwells.posted }} by {{ dwells.owner }}
+  </p>
+  {{ dwells.full_description|linebreaks }}
+{% endblock %}

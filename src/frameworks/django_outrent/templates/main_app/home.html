@@ -1,0 +1,16 @@
+{% extends "main_app/base.html" %}
+{% block title %}My Blog{% endblock %}
+{% block content %}
+  <h1>Home title</h1>
+  {% for e in dwells %}
+    <h2>
+      <a>
+        {{ e.title }}
+      </a>
+    </h2>
+    <p class="date">
+      Виставлено: {{ e.posted }} by {{ e.owner }}
+    </p>
+    {{ e.card_description|truncatewords:25|linebreaks }}
+  {% endfor %}
+{% endblock %}

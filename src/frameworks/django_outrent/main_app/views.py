@@ -1,5 +1,10 @@
 from django.shortcuts import render
+from .models import Dwelling, DwellingRentStatus, ReviewDwelling, ReviewRenter
 
-# Create your views here.
-def show_main_page(request):
-    return render(request, 'index.html')
+
+def dwellings_list(request):
+    return render(request, 'main_app/home.html', {'dwells': Dwelling.objects.all()})
+
+
+def dwelling_details(request, id):
+    return render(request, 'main_app/details.html', {'dwells': Dwelling.objects.get(id=id)})
