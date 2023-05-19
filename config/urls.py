@@ -1,5 +1,5 @@
 """
-URL configuration for django_outrent project.
+URL configuration for OutRent project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.2/topics/http/urls/
@@ -21,6 +21,6 @@ from main_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main_app.urls')),
-    path('draft-app', include('draft_app.urls')),
+    path('draft-app/', include('draft_app.urls')),
     #path('ratings/', include('star_ratings.urls', namespace='ratings')),
 ]
