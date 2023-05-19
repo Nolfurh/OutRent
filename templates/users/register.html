@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend>Приєднуйся до нас вже сьогодні</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Зареєструватися</button>
+            </div>
+        </form>
+        <div class="border-top pt-4">
+            <small>
+                Вже маєте власну сторінку? <a class="ml-2" href="#">Увійти</a>
+            </small>
+        </div>
+    </div>
+{% endblock %}

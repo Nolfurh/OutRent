@@ -17,10 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from main_app import views
+from users import views as user_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main_app.urls')),
     path('draft-app/', include('draft_app.urls')),
     #path('ratings/', include('star_ratings.urls', namespace='ratings')),
+    path('register/', user_views.register, name='register'),
 ]
